@@ -1,3 +1,3 @@
 <template>
-  <div>ini about</div>
+  <div class="text-white">tes about</div>
 </template>

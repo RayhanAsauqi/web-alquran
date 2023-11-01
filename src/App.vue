@@ -1,10 +1,22 @@
 <script setup lang="ts">
+import Navbar from "./components/Navbar.vue";
 import Home from "./pages/Home.vue";
+import { useListAlquran } from "./store/listAlquran";
+import { onMounted } from "vue";
+
+onMounted(() => {
+  listAlquran.fetchListAlquran();
+});
+
+const listAlquran = useListAlquran();
 </script>
 
 <template>
   <div>
+    <!-- Navbar -->
+    <Navbar :list-alquran="listAlquran" />
     <Home />
+    <RouterView></RouterView>
   </div>
 </template>
 
